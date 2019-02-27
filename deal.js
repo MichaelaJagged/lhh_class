@@ -1,11 +1,17 @@
 const columnCount = 7;
 
 function deal() {
-this.columns[0].append(this.cards[0])
-this.columns[1].append(this.cards[1])
-this.columns[2].append(this.cards[2])
-this.columns[3].append(this.cards[3])
-this.columns[4].append(this.cards[4])
-this.columns[5].append(this.cards[5])
-this.columns[6].append(this.cards[6])
+    let n = 0;
+
+    for (let i = 0; i < 7; i++) {
+        this.columns[i].append(this.cards[n])
+        if (i > 0) { this.cards[n].reversed = true; }
+        n++;
+    }
+    for (let i = 1; i < 7; i++) {
+        this.columns[i].append(this.cards[n])
+        if (i > 1) { this.cards[n].reversed = true; }
+        n++
+    }
+
 }
